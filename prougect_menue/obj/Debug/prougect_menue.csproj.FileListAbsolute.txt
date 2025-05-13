@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\bin\Debug\prougect_menue.exe.config
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\bin\Debug\prougect_menue.exe
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\bin\Debug\prougect_menue.pdb
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\obj\Debug\prougect_menue.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\obj\Debug\prougect_menue.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\obj\Debug\prougect_menue.exe
+C:\Users\USER\Desktop\הקדמה לפייתון\prougect_menue\prougect_menue\obj\Debug\prougect_menue.pdb

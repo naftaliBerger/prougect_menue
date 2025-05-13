@@ -12,23 +12,40 @@ namespace prougect_menue
     {
         static int[] Series_filling()
         {
-            return null;
+            int[]int_series = new int[3];
+            do
+            {
+                Console.WriteLine("plise enter a series");
+                string series1 = (Console.ReadLine());
+                string[] new_series = series1.Split(' ');
+                int_series = new int[new_series.Length];
+                for (int i = 0; i < int_series.Length; i++)
+                {
+                    int_series[i] = int.Parse(new_series[i]);
+                }
+
+            } while (int_series.Length < 3);
+            return int_series;
         }
-        static void Series_replacement(int[] series) 
+        static int[] Series_replacement() 
+        {
+           return Series_filling();
+
+        }
+        static void Introducing_the_series(int[] series)
         {
             for (int i = 0; i < series.Length; i++)
             {
-                Console.WriteLine(i);
+                Console.Write(series[i] + " ");
             }
-               
+
         }
-        static int[] Introducing_the_series()
+        static void Reverse_series(int[] series)
         {
-            return null ;
-        }
-        static int[] Reverse_series()
-        {
-            return null ;
+            for (int i = series.Length -1; i > 0; i--)
+            {
+                Console.Write(series[i] + " ");
+            }
         }
         static int[] Sorted_series()
         {
@@ -88,17 +105,17 @@ namespace prougect_menue
                 {
                     case 1: 
                         {
-                            Series_replacement(series);
+                            Series_replacement();
                             break;
                         }
                     case 2:
                         {
-                            Introducing_the_series();
+                            Introducing_the_series(series);
                             break;
                         }
                     case 3:
                         {
-                            Reverse_series();
+                            Reverse_series(series);
                             break;
                         }
                     case 4:
