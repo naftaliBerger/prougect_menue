@@ -42,34 +42,92 @@ namespace prougect_menue
         }
         static void Reverse_series(int[] series)
         {
-            for (int i = series.Length -1; i > 0; i--)
+            for (int i = series.Length -1; i >= 0; i--)
             {
                 Console.Write(series[i] + " ");
             }
         }
-        static int[] Sorted_series()
+        static void Sorted_series(int[] old_series)
         {
-            return null ;
+            bool booli = false;
+            int temp = 0;
+            int[] series = (int[])old_series.Clone();
+            for (int i = 0;i < series.Length; i++)
+            {
+                for (int j = i + 1; j < series.Length; j++)
+                {
+                    if(series[i] > series[j])
+                    {
+                        booli = true;
+                        temp = series[j];
+                        series[j] = series[i];
+                        series[i] = temp;
+                    }
+                if(booli == false)
+                    {
+                        break;
+                    }
+                    
+                }
+            }
+            for (int i = 0;i < series.Length; i++)
+            {
+                Console.Write(series[i] + " ");
+            }
+            
         }
-        static int max()
+        static void max(int[] series)
         {
-            return 0 ;
+            int max = series[0];
+            for (int i = 1; i < series.Length; i++) 
+            {
+                if (series[i] > max)
+                {
+                    max = series[i];
+                }
+            }
+            Console.WriteLine(max);
         }
-        static int min()
+        static void min(int[] series)
         {
-            return 0;
+            int min = series[0];
+            for (int i = 1; i < series.Length; i++)
+            {
+                if (series[i] < min)
+                {
+                    min = series[i];
+                }
+            }
+            Console.WriteLine(min);
         }
-        static int average()
+        static void average(int[] series)
         {
-            return 0;
+            double average = 0;
+            int sum = 0;
+            int len = 0;
+            for (int i = 0; i < series.Length; i++)
+            {
+                sum += series[i];
+            }
+            len = series.Length;
+            average = sum / Convert.ToDouble(len);
+            Console.WriteLine(average);
+            
         }
-        static int len()
+        static void len(int[] series)
         {
-            return 0;
+            int len = series.Length;
+            Console.WriteLine(len);
         }
-        static int sum()
+        static void sum(int[] series)
         {
-            return 0;
+            int sum = 0;
+            for (int i = 0; i < series.Length; i++)
+            {
+                sum += series[i];
+            }
+            Console.WriteLine(sum);
+
         }
         static void Main(string[] args)
         {
@@ -120,32 +178,32 @@ namespace prougect_menue
                         }
                     case 4:
                         {
-                            Sorted_series();
+                            Sorted_series(series);
                             break;
                         }
                     case 5:
                         {
-                            max(); 
+                            max(series); 
                             break;
                         }
                     case 6:
                         {
-                            min();
+                            min(series);
                             break;
                         }
                     case 7:
                         {
-                            average();
+                            average(series);
                             break;
                         }
                     case 8:
                         {
-                            len();
+                            len(series);
                             break;
                         }
                     case 9:
                         {
-                            sum();
+                            sum(series);
                             break;
                         }
                 }
