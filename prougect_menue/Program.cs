@@ -38,7 +38,7 @@ namespace prougect_menue
             {
                 Console.Write(series[i] + " ");
             }
-
+            Console.WriteLine();
         }
         static void Reverse_series(int[] series)
         {
@@ -46,6 +46,7 @@ namespace prougect_menue
             {
                 Console.Write(series[i] + " ");
             }
+            Console.WriteLine();
         }
         static void Sorted_series(int[] old_series)
         {
@@ -56,7 +57,8 @@ namespace prougect_menue
             {
                 for (int j = i + 1; j < series.Length; j++)
                 {
-                    if(series[i] > series[j])
+                    booli = false;
+                    if (series[i] > series[j])
                     {
                         booli = true;
                         temp = series[j];
@@ -74,7 +76,7 @@ namespace prougect_menue
             {
                 Console.Write(series[i] + " ");
             }
-            
+            Console.WriteLine();
         }
         static void max(int[] series)
         {
@@ -129,6 +131,31 @@ namespace prougect_menue
             Console.WriteLine(sum);
 
         }
+        static int GetValidMenuChoice()
+        {
+            int choice;
+            while (true)
+            {
+                Console.Write("Enter your choice (1-10): ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out choice))
+                {
+                    if (choice >= 1 && choice <= 10)
+                    {
+                        return choice;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Number must be between 1 and 10.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                }
+            }
+        }
         static void Main(string[] args)
         {
             int[] series;
@@ -148,7 +175,8 @@ namespace prougect_menue
             int input = 0;
             do
             {
-                Console.WriteLine("------menu------\nEnter number 1 to enter a series\n" +
+                Console.WriteLine("------menu------\n" +
+                    "Enter number 1 to enter a series\n" +
                 " number 2 to display the series\n" +
                 " number 3 to display the inverted series\n" +
                 " number 4 to display the sorted series\n" +
@@ -158,12 +186,12 @@ namespace prougect_menue
                 " number 8 to display the length of the series\n" +
                 " number 9 to display the sum of the entire series\n" +
                 " number 10 exit");
-                input = int.Parse(Console.ReadLine());
+                input = GetValidMenuChoice();
                 switch (input) 
                 {
                     case 1: 
                         {
-                            Series_replacement();
+                            series = Series_replacement();
                             break;
                         }
                     case 2:
